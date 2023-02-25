@@ -42,6 +42,9 @@ ALTER ROLE test WITH SUPERUSER CREATEROLE CREATEDB REPLICATION BYPASSRLS;
 CREATE DATABASE test WITH OWNER test;
 """
 
+
+# create database shop;
+
 # создайте бд для своего проекта
 "CREATE DATABASE db_for_project WITH OWNER test;"
 
@@ -64,6 +67,9 @@ pip install gunicorn (если нет в requirements.txt)
 touch .env
 nano .env
 """
+
+
+"./manage.py collectstatic"
 
 # проведите миграции в бд
 "python3 manage.py migrate"
@@ -146,6 +152,22 @@ server {
 
 # разрешите ngnix
 "sudo ufw allow 'Nginx Full'"
+
+
+'''
+
+# Anastasiya Tuzikova, [27/12/22 13:32]
+# chmod 755 . 
+
+# в домашней папке (~)
+
+# Anastasiya Tuzikova, [27/12/22 13:32]
+# потом 
+# sudo systemctl restart nginx
+
+# Anastasiya Tuzikova, [27/12/22 13:32]
+# и все
+'''
 
 
 "----------------------Если вышли ошибки после всего этого----------------------"
